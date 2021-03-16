@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Produto</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="container-phrases">
+            <h1>Tela de cadastro de produtos</h1>
+            <h4>Frase bonitinha pra incentivar o usuário a cadastrar o produto</h4>
+        </section>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <section>
+                <div class="container-image">
+                    <img src="imagehere.jpeg" alt="">
+                </div>
+                <input type="file" name="photoProduct">
+            </section>
+            <section>
+                <div class="container-name-description">
+                    <h4>Nome:</h4>
+                    <label for="nameProduct" id=""></label>
+                    <input type="text" name="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando" required>
+                </div>
+                <div>
+                    <h4>Descrição:</h4>
+                    <label for="descriptionProduct" id=""></label>
+                    <textarea required name="descriptionProduct" id="" cols="40" rows="5" placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando"></textarea>
+                </div>
+            </section>
+            <section>
+                <div class="container-radio-buttons">
+                    <h4>Aceito em troca:</h4>
+                    <input type="radio" id="cash||service" name="anuncio" value="cash||service">
+                    <label for="cash||service">Dinheiro, produto ou serviço - tanto faz!</label><br>
+                    <input type="radio" id="cashlonly" name="anuncio" value="cashonly">
+                    <label for="cashonly">Somente dinheiro</label><br>
+
+                </div>
+            </section>
+            <section>
+                <button type="submit">Publicar Anúncio</button>
+            </section>
+        </form>
+    </main>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
