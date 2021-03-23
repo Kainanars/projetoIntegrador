@@ -19,7 +19,7 @@
             <h1>Tela de cadastro de produtos</h1>
             <h4>Frase bonitinha pra incentivar o usuário a cadastrar o produto</h4>
         </section>
-        <form action="" method="POST">
+        <form action="/products" method="POST">
             <section>
                 <div class="container-image">
                     <img src="../public/images/imagehere.jpeg" alt="">
@@ -27,6 +27,11 @@
                 <input type="file" name="photoProduct">
             </section>
             <section>
+                <div>
+                    <h4>ID:</h4>
+                    <label for="id" id="id"></label>
+                    <input type="number" name="id" id="id" placeholder="Digite aqui o id do seu produto" required>
+                </div>
                 <div class="container-name-description">
                     <h4>Nome:</h4>
                     <label for="nameProduct" id=""></label>
@@ -41,12 +46,17 @@
             <section>
                 <div class="container-radio-buttons">
                     <h4>Aceito em troca:</h4>
-                    <input type="radio" id="cash||service" name="anuncio" value="cash||service">
+                    <input type="radio" id="cash||service" name="anuncio" value="cash||service" required>
                     <label for="cash||service">Dinheiro, produto ou serviço - tanto faz!</label><br>
                     <input type="radio" id="cashlonly" name="anuncio" value="cashonly">
                     <label for="cashonly">Somente dinheiro</label><br>
-
                 </div>
+                <div>
+                    <h4>Preço:</h4>
+                    <label for="price" id=""></label>
+                    <input type="number" name="price" id="price" placeholder="Digite aqui o preço do produto">
+                </div>
+                <br>
             </section>
             <section>
                 <button type="submit">Publicar Anúncio</button>

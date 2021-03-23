@@ -1,6 +1,4 @@
-const products = [{
-  
-}
+const products = [
 ];
   
   function getProducts() {
