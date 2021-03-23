@@ -1,4 +1,12 @@
 const products = [
+  {
+    id:99999,
+    nameProduct: "Produto teste",
+    descriptionProduct: "Novo Produto",
+    price: 99999,
+    anuncio: "Apenas dinheiro"
+
+  }
 ];
   
   function getProducts() {
