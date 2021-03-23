@@ -9,7 +9,7 @@ console.log(products)
   // Criando o produto
 
 router.get('/create', function(req, res) {
-    res.render('productsCreate', {errorMessage: req.query.errorMessage} );
+    res.render('productsCreate', {errorMessage: req.query.errorMessage, sucessMessage: req.query.sucessMessage} );
   });
 
 router.post( "/", middlewares.validateBody ,controller.newProduct );

@@ -6,7 +6,7 @@ function newProduct (req, res) {
   console.log(newProduct)
   
   products.insertProduct(newProduct);
-  res.redirect("/products");
+  res.redirect('/products/create?sucessMessage=Seu anuncio foi cadastrado com sucesso!');
   
 }
 
