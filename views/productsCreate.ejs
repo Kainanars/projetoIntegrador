@@ -12,67 +12,70 @@
     <main class="container">
         <% if (errorMessage) { %>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Erro!</strong> <%= errorMessage %>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <strong>Erro!</strong>
+                <%= errorMessage %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-          <% } %>
-          <%if (sucessMessage) { %>
-            <div class="alert alert-primary" role="alert">
-                <strong>Parabéns!</strong> <%= sucessMessage %> <a href="/products" class="alert-link">Ir para listagem de produtos.</a><div class=""></div>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </div>
+            <% } %>
+                <%if (sucessMessage) { %>
+                    <div class="alert alert-primary" role="alert">
+                        <strong>Parabéns!</strong>
+                        <%= sucessMessage %> <a href="/products" class="alert-link">Ir para listagem de produtos.</a>
+                            <div class=""></div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-          <% } %>
-        <section class="container-phrases">
-            <h1>Tela de cadastro de produtos</h1>
-            <h4>Frase bonitinha pra incentivar o usuário a cadastrar o produto</h4>
-        </section>
-        <form action="/products" method="POST">
-            <section>
-                <div class="container-image" >
-                    <img src="/images/imagehere.jpeg" alt="" >
-                </div>
-                <input type="file" name="photoProduct" >
-            </section>
-            <section>
-                <div>
-                    
-                    <label for="id" id="id" class="form-label"><h4>ID:</h4></label>
-                    <input type="number" name="id" id="id" placeholder="Digite aqui o id do seu produto" class="form-control" required>
-                </div>
-                <div class="container-name-description">
-                    
-                    <label for="nameProduct" id="" class="form-label"><h4>Nome:</h4></label>
-                    <input type="text" name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando" class="form-control" required>
-                </div>
-                <div>
-                    <h4>Descrição:</h4>
-                    <label for="descriptionProduct" id="" class="form-label"></label>
-                    <textarea required name="descriptionProduct" id="descriptionProduct" cols="40" rows="5" placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando" class="form-control"></textarea>
-                </div>
-            </section>
-            <section>
-                <div class="container-radio-buttons">
-                    <h4>Aceito em troca:</h4>
-                    <input type="radio" id="" name="anuncio" value="Dinheiro ou Permuta" class="form-check-label" required>
-                    <label for="cash||service">Dinheiro, produto ou serviço - tanto faz!</label><br>
-                    <input type="radio" id="" name="anuncio" value="Apenas Dinheiro" class="form-check-label">
-                    <label for="cashonly">Somente dinheiro</label><br>
-                </div>
-                <div>
-                    <h4>Preço:</h4>
-                    <label for="price" id=""></label>
-                    <input type="number" name="price" id="price" placeholder="Digite aqui o preço do produto" class="form-control"> 
-                </div>
-                <br>
-            </section>
-            <section>
-                <button type="submit" class="btn btn-primary">Publicar Anúncio</button>
-            </section>
-        </form>
+                    </div>
+                    <% } %>
+                        <section class="container-phrases">
+                            <h1>Tela de cadastro de produtos</h1>
+                            <h4>Frase bonitinha pra incentivar o usuário a cadastrar o produto</h4>
+                        </section>
+                        <form action="/products" method="POST">
+                            <section>
+                                <div class="container-image">
+                                    <img src="/images/imagehere.jpeg" alt="">
+                                </div>
+                                <input type="file" name="photoProduct">
+                            </section>
+                            <section>
+                                <div>
+
+                                    <label for="id" id="id" class="form-label"><h4>ID:</h4></label>
+                                    <input type="number" name="id" id="id" placeholder="Digite aqui o id do seu produto" class="form-control" required>
+                                </div>
+                                <div class="container-name-description">
+
+                                    <label for="nameProduct" id="" class="form-label"><h4>Nome:</h4></label>
+                                    <input type="text" name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando" class="form-control" required>
+                                </div>
+                                <div>
+                                    <h4>Descrição:</h4>
+                                    <label for="descriptionProduct" id="" class="form-label"></label>
+                                    <textarea required name="descriptionProduct" id="descriptionProduct" cols="40" rows="5" placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando" class="form-control"></textarea>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="container-radio-buttons">
+                                    <h4>Aceito em troca:</h4>
+                                    <input type="radio" id="cash||service" name="anuncio" value="Dinheiro ou Permuta" class="form-check-label" required>
+                                    <label for="cash||service">Dinheiro, produto ou serviço - tanto faz!</label><br>
+                                    <input type="radio" id="cashonly" name="anuncio" value="Apenas Dinheiro" class="form-check-label">
+                                    <label for="cashonly">Somente dinheiro</label><br>
+                                </div>
+                                <div>
+                                    <h4>Preço:</h4>
+                                    <label for="price" id=""></label>
+                                    <input type="number" name="price" id="price" placeholder="Digite aqui o preço do produto" class="form-control">
+                                </div>
+                                <br>
+                            </section>
+                            <section>
+                                <button type="submit" class="btn btn-primary">Publicar Anúncio</button>
+                            </section>
+                        </form>
     </main>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
