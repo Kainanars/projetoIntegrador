@@ -1,16 +1,14 @@
 body {
-  text-align: center;
+    text-align: center;
 }
 
-
 .container {
-  width: 669px;
-  margin: 20px auto;
- 
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center;
+    width: 669px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
 }
