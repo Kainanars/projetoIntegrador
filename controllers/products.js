@@ -12,6 +12,5 @@ function newProduct(req, res) {
 }
 
 module.exports = {
-    newProduct: newProduct,
-    productsEdit: productsEdit
+    newProduct: newProduct
 }

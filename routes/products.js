@@ -4,7 +4,7 @@ const router = express.Router();
 const middlewares = require('../middlewares/products');
 const model = require('../models/products');
 const products = model.getProducts();
-const auth = require('../middlewares/auth'); // Esse é o middleware para authenticar se o usuário está logado. 
+const auth = require('../middlewares/auth') // Esse é o middleware para authenticar se o usuário está logado. 
 
 // Criando o produto
 
@@ -17,7 +17,7 @@ router.post("/", middlewares.validateBody, controller.newProduct);
 // Listando Produtos
 
 router.get('/', auth.auth, (req, res, next) => {
-    res.render('productsList', { products: controller.productsEdit });
+    res.render('productsList', { products: products });
 
     // Rota de detalhes de produtos
 

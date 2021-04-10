@@ -5,6 +5,7 @@
     <%- include('../public/partials/header') %>
 
         <title>pagina de produtos</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <link rel="stylesheet" href="/stylesheets/list.css" />
 </head>
 
@@ -24,7 +25,10 @@
                         <div class="card-body">
                             <h5 class="card-title "><strong><%=product.nameProduct %></strong></h5>
 
-                            <a href="/products/<%= product.id%>" class="btn btn-custom text-center">Detalhes</a>
+                            <a href="/products/<%= product.id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
+                            <a href="#" class="btn btn-custom text-center "><i class="fas fa-trash-alt"></i></a>
+                            <a href="#" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
+
                         </div>
                     </div>
                 </div>
