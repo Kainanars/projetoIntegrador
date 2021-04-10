@@ -43,9 +43,10 @@
                                                 <label>Forma de pagamento:</label>
                                                 <%=product.anuncio%>
             </div>
-            <div class="btns">
-                <button class="btn btn-custom">Editar</button>
-                <button class="btn btn-custom">Deletar</button>
+            <a  role= "button" href="/products/edit/<%= product.id%>" class= "btn btn-warning"> Editar
+            </a>
+            <a  role= "button" href="/products/delete/<%= product.id%>" class= "btn btn-danger"> Deletar
+            </a>
             </div>
         </main>
         <%- include('../public/partials/footer') %>

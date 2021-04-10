@@ -3,6 +3,7 @@ const products = [
     id:99999,
     nameProduct: "Produto teste",
     descriptionProduct: "Novo Produto",
+    category: "Produto",
     price: 99999,
     anuncio: "Apenas dinheiro"
 
@@ -16,6 +17,7 @@ const products = [
   function insertProduct(product) {
     products.push(product);
   }
+
   
   module.exports = {
     getProducts: getProducts,

@@ -25,32 +25,38 @@
                 <section>
                     <div class="container-fields">
                         <label for="id" id="id" class="form-label"><h4>ID:</h4></label>
-                        <input type="number" name="id" id="id" placeholder="Digite aqui o id do seu produto" class="form-control" required>
+                        <input 
+                        type="number" 
+                        name="id" 
+                        id="id" 
+                        value= "<%- product.id%>" 
+                        class="form-control" 
+                        readonly>
                     </div>
                     <div class="class= container-fields ">
 
                         <label for="nameProduct" id="" class="form-label"><h4>Nome:</h4></label>
-                        <input type="text " name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando " class="form-control " required>
+                        <input value= "<%- product.nameProduct%>" type="text " name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando " class="form-control " required>
                     </div>
                     <div class="container-fields">
                         <h4>Descrição:</h4>
                         <label for="descriptionProduct" id="" class="form-label"></label>
-                        <textarea required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 " placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando " class="form-control "></textarea>
+                        <textarea value= "<%- product.descriptionProduct%>" required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 " placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando " class="form-control "></textarea>
                     </div>
                     <div class="container-fields">
                         <h4>Unidades:</h4>
                         <label for="un" id="" class="form-label"></label>
-                        <input type="number" name="un" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
+                        <input value= "<%- product.un%>" type="number" name="un" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
                     </div>
                     <div class="container-fields">
                         <h4>Tipo de produto:</h4>
                         <label for="type" id="" class="form-label "></label>
-                        <input type="text" name="type" id="" placeholder="Digite o tipo de produto " class="form-control " required>
+                        <input value= "<%- product.type%>" type="text" name="type" id="" placeholder="Digite o tipo de produto " class="form-control " required>
                     </div>
                     <div class="container-fields ">
                         <h4>Categoria do Produto:</h4>
                         <label for="category " id="" class="form-label "></label>
-                        <input type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
+                        <input value= "<%- product.category%>"type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
                     </div>
                     <div>
                 </section>
@@ -65,7 +71,7 @@
                     <div class="container-fields">
                         <h4>Preço:</h4>
                         <label for="price" id=""></label>
-                        <input type="text" name="price" id="" placeholder="Digite aqui o preço do produto " class="form-control ">
+                        <input value= "<%- product.price%>"type="text" name="price" id="" placeholder="Digite aqui o preço do produto " class="form-control ">
                     </div>
                     <br>
                 </section>

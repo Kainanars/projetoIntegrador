@@ -21,14 +21,23 @@ router.get('/', auth.auth, (req, res, next) => {
 
     // Rota de detalhes de produtos
 
-    router.get('/:id', auth.auth, function(req, res) {
+    router.get('/:id',  function(req, res) {
         var productid = req.params.id;
         var product = products.find(item => item.id == productid)
         res.render('productsDetails', { product: product });
     });
 
-
+router.get('/edit/:id',  function(req, res){
+    var productid = req.params.id;
+    var product = products.find(item => item.id == productid)
+    res.render('productEdit', {product: product})
+})
 });
 
-
+router.get('/delete/:id' , function(req, res){
+    var productid = req.params.id;
+    var product = products.filter(item => item.id != productid)
+    console.log(product)
+    res.render('productsList', {products: product})
+});
 module.exports = router;
