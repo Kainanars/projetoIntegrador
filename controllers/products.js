@@ -1,4 +1,4 @@
-const { render } = require("../app");
+
 const products = require("../models/products");
 
 

@@ -29,15 +29,21 @@ router.get('/', auth.auth, (req, res, next) => {
 
 router.get('/edit/:id',  function(req, res){
     var productid = req.params.id;
-    var product = products.find(item => item.id == productid)
-    res.render('productEdit', {product: product})
+    var product = model.getProducts(productid);
+    res.render("productEdit", {product: product})
 })
 });
 
-router.get('/delete/:id' , function(req, res){
-    var productid = req.params.id;
-    var product = products.filter(item => item.id != productid)
-    console.log(product)
-    res.render('productsList', {products: product})
-});
+router.put('/', function(req, res){
+    const product = req.body;
+    model.updateProduct(product);
+    res.redirect("/products");
+})
+
+router.delete('/' , function(req, res){
+    const product = req.body;
+    model.removeProducts(product.id);
+    res.redirect("/products");
+})
+
 module.exports = router;
