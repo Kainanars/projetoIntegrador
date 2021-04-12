@@ -43,7 +43,7 @@
                                                 <label>Forma de pagamento:</label>
                                                 <%=product.anuncio%>
             </div>
-<form method="POST" action="/products?_method=DELETE">
+<form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
 <input type="text" hidden name="id" value="<%-product.id%>"/>
 <button type="submit" class="btn btn-danger">Deletar</button>
 </form>

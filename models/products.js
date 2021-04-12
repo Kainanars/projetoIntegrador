@@ -1,12 +1,20 @@
 let products = [
   {
-    id:99999,
-    nameProduct: "Produto teste",
-    descriptionProduct: "Novo Produto",
-    category: "Produto",
+    id:1,
+    nameProduct: "Televisão",
+    descriptionProduct: "50 polegadas",
+    category: "Televisão",
     price: 99999,
     anuncio: "Apenas dinheiro"
 
+  },
+  {
+  id:2,
+    nameProduct: "Computador",
+    descriptionProduct: "Core i5",
+    category: "Computador",
+    price: 88888,
+    anuncio: "Apenas dinheiro"
   }
 ];
   
@@ -20,7 +28,7 @@ let products = [
 
   function updateProduct(product){
     const index = products.findIndex((obj) => {
-      return parseInt(obj.id) === parseInt(product.id);
+      return Number(obj.id) === Number(product.id);
     })
     products[index] = product;
 
@@ -29,7 +37,8 @@ let products = [
 
 
   function removeProducts(productid){
-    products = products.filter((product) => parseInt(product.id) !== parseInt(productid))
+    products = products.filter((product) => Number(product.id) !== Number(productid))
+    return products
   }
   
   module.exports = {

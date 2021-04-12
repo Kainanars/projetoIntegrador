@@ -17,6 +17,7 @@ router.post("/", middlewares.validateBody, controller.newProduct);
 // Listando Produtos
 
 router.get('/', auth.auth, (req, res, next) => {
+    const products = model.getProducts();
     res.render('productsList', { products: products });
 
     // Rota de detalhes de produtos
@@ -40,7 +41,7 @@ router.put('/', function(req, res){
     res.redirect("/products");
 })
 
-router.delete('/' , function(req, res){
+router.delete('/delete/:id' , function(req, res){
     const product = req.body;
     model.removeProducts(product.id);
     res.redirect("/products");
