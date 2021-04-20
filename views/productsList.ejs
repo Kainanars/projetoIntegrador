@@ -20,16 +20,16 @@
 
                 <div class="each-child">
                     <div class=" card ">
-                        <img src="/images/nature.jpg"  class="card-img-top " alt="... ">
+                        <img src="/images/<%= product.photo_product%>"  class="card-img-top " alt="... ">
                         <div class="card-body">
                             
                             
-                            <h5 class="card-title "><strong><%=product.nameProduct.substr(0,15) %></strong></h5>
-                            <h6 class="card-title "><%=product.descriptionProduct.substr(0,50) %>...</h6>
+                            <h5 class="card-title "><strong><%=product.name.substr(0,30) %></strong></h5>
+                            <h6 class="card-title "><%=product.description.substr(0,50) %>...</h6>
 
 
-                            <a href="/products/<%= product.id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
-                            <a href="/products/edit/<%= product.id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
+                            <a href="/products/<%= product.product_id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
+                            <a href="/products/edit/<%= product.product_id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
                           
 
                         </div>

@@ -35,7 +35,7 @@
                                 <h1>Cadastre seu produto</h1>
                                 <h4>“Ganhar não é a coisa mais importante do mundo. Mas querer ganhar é.”</h4>
                             </section>
-                            <form action="/products" method="POST">
+                            <form  action="/products" method="POST">
                                 <section>
                                         
                                     <div class="preview" id="preview">
@@ -54,12 +54,8 @@
                                 </div>
                                 </section>
                                 <section>
-                                    <div class="container-fields">
-                                        <label for="id" id="id" class="form-label"><h4>ID:</h4></label>
-                                        <input type="number" name="id" id="id" placeholder="Digite aqui o id do seu produto" class="form-control" required>
-                                    </div>
+                                    
                                     <div class="class= container-fields ">
-
                                         <label for="nameProduct" id="" class="form-label"><h4>Nome:</h4></label>
                                         <input type="text " name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando " class="form-control " required>
                                     </div>
@@ -71,33 +67,59 @@
                                     <div class="container-fields">
                                         <h4>Unidades:</h4>
                                         <label for="un" id="" class="form-label"></label>
-                                        <input type="number" name="un" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
+                                        <input type="number" name="und" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
                                     </div>
                                     <div class="container-fields">
                                         <h4>Tipo de produto:</h4>
                                         <label for="type" id="" class="form-label "></label>
-                                        <input type="text" name="type" id="" placeholder="Digite o tipo de produto " class="form-control " required>
+                                        <select class="form-control" name="type">
+                                            <option selected disabled>Selecione o tipo do produto</option>
+                                            <option>Digital</option>
+                                            <option>Físico</option>
+                                          </select>
+                                        
                                     </div>
                                     <div class="container-fields ">
                                         <h4>Categoria do Produto:</h4>
                                         <label for="category" id="" class="form-label "></label>
-                                        <input type="text " name="category" id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
+                                        <select class="form-control" name="category">
+                                            <option selected disabled>Selecione a categoria do produto</option>
+                                            <option>Alimentos e Bebidas</option>
+                                            <option>Automotivo</option>
+                                            <option>Celulares e Comunicação</option>
+                                            <option>Computadores e Informática</option>
+                                            <option>Cozinha</option>
+                                            <option>Eletrônicos, TV e Áudio</option>
+                                            <option>Esportes, Aventura e Lazer</option>
+                                            <option>Ferramentas e Construção</option>
+                                            <option>Filmes, Séries e Música</option>
+                                            <option>Games e Consoles</option>
+                                            <option>Livros</option>
+                                            <option>Papelaria e Escritório</option>
+                                            <option>Pet Shop</option>
+                                            <option>Roupas, Calçados e Acessórios</option>
+                                          </select>
                                     </div>
                                     <div>
                                 </section>
                                 <section>
                                     <div class="container-radio-buttons ">
                                         <h4 class="container-fields">Aceito em troca:</h4>
-                                        <input type="radio" id="cash||service " name="anuncio " value="Dinheiro ou Permuta " class="form-check-label " required>
+                                        <input type="radio" id="cash||service " name="payment" value="Dinheiro ou Permuta " class="form-check-label " required>
                                         <label for="cash||service ">Dinheiro, produto ou serviço - tanto faz!</label><br>
-                                        <input type="radio" id="cashonly" name="anuncio " value="Apenas Dinheiro " class="form-check-label ">
+                                        <input type="radio" id="cashonly" name="payment" value="Apenas Dinheiro " class="form-check-label ">
                                         <label for="cashonly">Somente dinheiro</label><br>
                                     </div>
                                     <div class="container-fields">
+
                                         <h4>Preço:</h4>
                                         <label for="price" id=""></label>
-                                        <input type="text" name="price" id="" placeholder="Digite aqui o preço do produto " class="form-control ">
-                                    </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text">R$</span>
+                                            </div>
+                                            <input type="number" class="form-control" name="price" id="" placeholder="Digite aqui o preço do produto" min="0" step=".01" required>
+                                        </div>
                                     <br>
                                 </section>
                                 <section>
