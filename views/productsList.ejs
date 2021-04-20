@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../public/partials/header') %>
+
+        <title>pagina de produtos</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/stylesheets/list.css" />
+</head>
+
+<body>
+    <main class="container">
+        <section>
+            <h1 class="title">Listagem de produtos</h1>
+        </section>
+
+        <section class="grid">
+            <% products.forEach(function(product) { %>
+
+                <div class="each-child">
+                    <div class=" card " style="width: 12rem; ">
+
+                        <img src="/images/imagehere.jpeg" style="width: 12rem; height: 12rem; " class="card-img-top " alt="... ">
+                        <div class="card-body">
+                            <h5 class="card-title "><strong><%=product.nameProduct %></strong></h5>
+
+                            <a href="/products/<%= product.id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
+                            <a href="/products/edit/<%= product.id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
+                          
+
+                        </div>
+                    </div>
+                </div>
+
+                <%})%>
+        </section>
+    </main>
+    <%- include('../public/partials/footer') %>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
+<!--
+<script src="index.ejs " charset="utf-8 "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <h1 class="title">Listagem de produtos</h1>
+    <br>
+    <div class="container">
+        <% products.forEach(function(product) { %>
+            <li>
+                <img src="/images/imagehere.jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect>
+                </img>
+
+                <h2>
+                    <%=product.nameProduct %>
+                </h2>
+
+                <a href="/products/<%= product.id%>" class="btn btn-primary">Detalhes</a>
+                <%}) %>
+
+            </li>
+    </div>-->

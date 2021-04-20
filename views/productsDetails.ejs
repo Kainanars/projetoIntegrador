@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>pagina de produtos</title>
+    <link rel="stylesheet" href="/stylesheets/products.css" />
+    <link rel="stylesheet" href="/stylesheets/detalhes.css" />
+</head>
+
+<body>
+    <%- include('../public/partials/header') %>
+
+        <main class="container">
+            <h1 class="title">Detalhes do produto</h1>
+
+
+            <div>
+                <label>ID Produto:</label>
+                <%=product.id %>
+                    <br>
+                    <label>Nome:</label>
+                    <%=product.nameProduct %>
+                        <br>
+                        <label>Detalhes:</label>
+                        <%=product.descriptionProduct %>
+                            <br>
+                            <label>Unidade:</label>
+                            <%=product.un %>
+                                <br>
+                                <label>Preço do Produto:</label>
+                                <%=product.price %>
+                                    <br>
+                                    <label>Status:</label>
+                                    <%=product.status %>
+                                        <br>
+                                        <label>Tipo do Produto:</label>
+                                        <%=product.type%>
+                                            <br>
+                                            <label>Categoria do produto:</label>
+                                            <%=product.category%>
+                                                <br>
+                                                <label>Forma de pagamento:</label>
+                                                <%=product.anuncio%>
+            </div>
+<form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
+<input type="text" hidden name="id" value="<%-product.id%>"/>
+<button type="submit" class="btn btn-danger">Deletar</button>
+</form>
+        </main>
+        <%- include('../public/partials/footer') %>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>

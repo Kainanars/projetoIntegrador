@@ -1,0 +1,27 @@
+h1,
+h4 {
+    color: gray;
+}
+
+.container-phrases {
+    margin-top: 100px;
+}
+
+.container-fields {
+    margin-top: 50px;
+}
+
+hr {
+    color: aqua;
+    background-color: aqua;
+}
+
+.bg-color {
+    background-color: aqua;
+}
+
+button.btn-custom {
+    background-color: gray;
+    color: aqua;
+    font-weight: 700;
+}

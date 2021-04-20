@@ -1,0 +1,100 @@
+body {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    background-color: #ecf0f1; 
+    font-family: sans-serif;
+}
+
+.form {
+    width: 400px;
+    margin: auto;
+    padding-top: 100px
+
+}
+
+.card {
+    background-color: white; 
+    padding: 30px; 
+    border-radius: 20px;
+}
+    
+.card-top {
+    text-align: center;
+}
+
+.card-top p{
+    color: grey;
+}
+
+.imglogo {
+    border-radius: 50px;
+    width:100px;
+}
+
+h2 {
+    color: #41a1d4
+}
+
+.card-group {
+    margin-bottom: 30px;
+
+}
+.card-group >input {
+    width: 100%;
+    color: grey; 
+    border-radius: 10px;
+    outline: 0; 
+    height: 50px;  
+    border: none;
+    background-color: #ecf0f1;
+    box-sizing: border-box;
+    padding-left: 30px; 
+    font-size: large;
+    
+}
+
+::placeholder {
+    font-size: large;
+}
+
+.card-group > button{
+    background-color: #41a1d4;
+    width: 60%; 
+    color: white; 
+    border: none; 
+    border-radius: 20px;
+    height: 35px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer; 
+    
+}
+
+#botao {
+    text-align: center;
+    outline: 0; 
+}
+
+.card-group button:hover {
+    background-color: #2d79a1;
+    transition: 1s; 
+}
+
+.error-message{
+    border-width: 20px;
+    border-color: #851d1d;
+    background-color: #e9c1c1;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #851d1d
+}
+
+.logo{
+    width: 100px;
+    height: 100px; 
+    border-radius: 50px; 
+    text-align: center; 
+
+}

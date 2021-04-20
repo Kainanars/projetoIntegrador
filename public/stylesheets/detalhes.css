@@ -1,0 +1,15 @@
+.title {
+    color: gray;
+    margin-top: 50px;
+}
+
+div {
+    color: gray;
+}
+
+button.btn-custom {
+    background-color: gray;
+    color: aqua;
+    font-weight: 700;
+    margin-top: 50px;
+}
