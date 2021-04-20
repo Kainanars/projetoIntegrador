@@ -12,15 +12,26 @@
 <body>
     <%- include('../public/partials/header') %>
         <main class="container">
-            <section class="container-phrases">
-                <h1>Tela de edição de produto</h1>
+            <section class="container-phrases titulo">
+                <h1>Editando o produto: <strong><%=product.nameProduct %></strong></h1>
             </section>
             <form action="/products?_method=PUT" method="POST">
                 <section>
-                    <div class="container-fields">
-                        <img src="/images/imagehere.jpeg" alt="">
+                                        
+                    <div class="preview" id="preview">
+                        <img src="" class="imagePreview" >
+                        <span class="imagePreview-defaultText" >Image preview</span>
                     </div>
-                    <input class="container-fields" type="file" name="photoProduct">
+                    
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="photoProduct" id="photoProduct" aria-describedby="inputGroupFileAddon01" >
+                        <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo </label>
+                    </div>
+                </div>
                 </section>
                 <section>
                     <div class="container-fields">
@@ -41,7 +52,7 @@
                     <div class="container-fields">
                         <h4>Descrição:</h4>
                         <label for="descriptionProduct" id="" class="form-label"></label>
-                        <textarea value= "<%- product.descriptionProduct%>" required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 " placeholder="Digite aqui a descrição do produto ou serviço que você está anunciando " class="form-control "></textarea>
+                        <textarea  required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 " value= "<%- product.descriptionProduct%>" placeholder="<%-product.descriptionProduct%>" class="form-control "></textarea>
                     </div>
                     <div class="container-fields">
                         <h4>Unidades:</h4>
@@ -56,7 +67,7 @@
                     <div class="container-fields ">
                         <h4>Categoria do Produto:</h4>
                         <label for="category " id="" class="form-label "></label>
-                        <input value= "<%- product.category%>"type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
+                        <input value= "<%-product.category%>"type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
                     </div>
                     <div>
                 </section>

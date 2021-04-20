@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/create.css" />
-    <title>Registro de Produto</title>
+    <title>Cadastro de Produto</title>
 </head>
 
 <body>
@@ -31,16 +31,27 @@
                 </button>
                         </div>
                         <% } %>
-                            <section class="container-phrases">
-                                <h1>Tela de cadastro de produtos</h1>
-                                <h4>Frase bonitinha pra incentivar o usuário a cadastrar o produto</h4>
+                            <section class="container-phrases titulo">
+                                <h1>Cadastre seu produto</h1>
+                                <h4>“Ganhar não é a coisa mais importante do mundo. Mas querer ganhar é.”</h4>
                             </section>
                             <form action="/products" method="POST">
                                 <section>
-                                    <div class="container-fields">
-                                        <img src="/images/imagehere.jpeg" alt="">
+                                        
+                                    <div class="preview" id="preview">
+                                        <img src="" class="imagePreview" >
+                                        <span class="imagePreview-defaultText" >Image preview</span>
                                     </div>
-                                    <input class="container-fields" type="file" name="photoProduct">
+                                    
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="photoProduct" id="photoProduct" aria-describedby="inputGroupFileAddon01" >
+                                        <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo </label>
+                                    </div>
+                                </div>
                                 </section>
                                 <section>
                                     <div class="container-fields">
@@ -69,8 +80,8 @@
                                     </div>
                                     <div class="container-fields ">
                                         <h4>Categoria do Produto:</h4>
-                                        <label for="category " id="" class="form-label "></label>
-                                        <input type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
+                                        <label for="category" id="" class="form-label "></label>
+                                        <input type="text " name="category" id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
                                     </div>
                                     <div>
                                 </section>
@@ -95,6 +106,7 @@
                             </form>
         </main>
         <%- include('../public/partials/footer') %>
+            <script src="/javascript/productsCreate.js"></script>
             <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css " integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T " crossorigin="anonymous ">
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>

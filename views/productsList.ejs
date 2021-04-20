@@ -4,7 +4,7 @@
 <head>
     <%- include('../public/partials/header') %>
 
-        <title>pagina de produtos</title>
+        <title>Produtos</title>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <link rel="stylesheet" href="/stylesheets/list.css" />
 </head>
@@ -12,18 +12,21 @@
 <body>
     <main class="container">
         <section>
-            <h1 class="title">Listagem de produtos</h1>
+            <h1 class="title">Lista de produtos</h1>
         </section>
 
         <section class="grid">
             <% products.forEach(function(product) { %>
 
                 <div class="each-child">
-                    <div class=" card " style="width: 12rem; ">
-
-                        <img src="/images/imagehere.jpeg" style="width: 12rem; height: 12rem; " class="card-img-top " alt="... ">
+                    <div class=" card ">
+                        <img src="/images/nature.jpg"  class="card-img-top " alt="... ">
                         <div class="card-body">
-                            <h5 class="card-title "><strong><%=product.nameProduct %></strong></h5>
+                            
+                            
+                            <h5 class="card-title "><strong><%=product.nameProduct.substr(0,15) %></strong></h5>
+                            <h6 class="card-title "><%=product.descriptionProduct.substr(0,50) %>...</h6>
+
 
                             <a href="/products/<%= product.id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
                             <a href="/products/edit/<%= product.id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>

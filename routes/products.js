@@ -17,7 +17,6 @@ router.post("/", middlewares.validateBody, controller.newProduct);
 // Listando Produtos
 
 router.get('/', auth.auth, (req, res, next) => {
-    const products = model.getProducts();
     res.render('productsList', { products: products });
 
     // Rota de detalhes de produtos
@@ -30,21 +29,15 @@ router.get('/', auth.auth, (req, res, next) => {
 
 router.get('/edit/:id',  function(req, res){
     var productid = req.params.id;
-    var product = model.getProducts(productid);
-    res.render("productEdit", {product: product})
+    var product = products.find(item => item.id == productid)
+    res.render('productEdit', {product: product})
 })
 });
 
-router.put('/', function(req, res){
-    const product = req.body;
-    model.updateProduct(product);
-    res.redirect("/products");
-})
-
-router.delete('/delete/:id' , function(req, res){
-    const product = req.body;
-    model.removeProducts(product.id);
-    res.redirect("/products");
-})
-
+router.get('/delete/:id' , function(req, res){
+    var productid = req.params.id;
+    var product = products.filter(item => item.id != productid)
+    console.log(product)
+    res.render('productsList', {products: product})
+});
 module.exports = router;

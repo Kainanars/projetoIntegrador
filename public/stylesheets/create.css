@@ -25,3 +25,33 @@ button.btn-custom {
     color: aqua;
     font-weight: 700;
 }
+
+
+.preview {
+    width: 200px;
+    min-height: 200px;
+    border: 2px solid #dddd;
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccc;
+    font-size: 15px ;
+    font-style: italic;
+}
+
+.imagePreview {
+    display: none;
+    width: 100%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+body{
+    margin-bottom: 100px;
+}

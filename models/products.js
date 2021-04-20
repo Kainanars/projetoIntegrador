@@ -2,14 +2,14 @@ let products = [
   {
     id:1,
     nameProduct: "Televisão",
-    descriptionProduct: "50 polegadas",
+    descriptionProduct: "O design sofisticado da Smart TV Samsung Crystal UHD 58TU7020 com exclusiva tela sem bordas aparentes proporciona elegância ao seu ambiente",
     category: "Televisão",
     price: 99999,
     anuncio: "Apenas dinheiro"
 
   },
-  {
-  id:2,
+  { 
+    id:2,
     nameProduct: "Computador",
     descriptionProduct: "Core i5",
     category: "Computador",
