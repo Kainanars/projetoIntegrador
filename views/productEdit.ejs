@@ -13,7 +13,7 @@
     <%- include('../public/partials/header') %>
         <main class="container">
             <section class="container-phrases titulo">
-                <h1>Editando o produto: <strong><%=product.nameProduct %></strong></h1>
+                <h1>Editando o produto: <strong><%=product.name %></strong></h1>
             </section>
             <form action="/products?_method=PUT" method="POST">
                 <section>
@@ -40,50 +40,76 @@
                         type="number" 
                         name="id" 
                         id="id" 
-                        value= "<%- product.id%>" 
+                        value= "<%- product.product_id%>" 
                         class="form-control" 
                         readonly>
                     </div>
                     <div class="class= container-fields ">
 
                         <label for="nameProduct" id="" class="form-label"><h4>Nome:</h4></label>
-                        <input value= "<%- product.nameProduct%>" type="text " name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando " class="form-control " required>
+                        <input value= "<%- product.name%>" type="text " name="nameProduct" id="nameProduct" placeholder="Digite aqui o nome do produto ou serviço que você está anunciando " class="form-control " required>
                     </div>
                     <div class="container-fields">
                         <h4>Descrição:</h4>
                         <label for="descriptionProduct" id="" class="form-label"></label>
-                        <textarea  required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 " value= "<%- product.descriptionProduct%>" placeholder="<%-product.descriptionProduct%>" class="form-control "></textarea>
+                        <textarea  required name="descriptionProduct" id="descriptionProduct" cols="40 " rows="5 "  class="form-control "><%- product.description%></textarea>
                     </div>
                     <div class="container-fields">
                         <h4>Unidades:</h4>
                         <label for="un" id="" class="form-label"></label>
-                        <input value= "<%- product.un%>" type="number" name="un" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
+                        <input value= "<%- product.und%>" type="number" name="und" id="" placeholder="Digite aqui a quantidade que você tem desse produto " class="form-control " required>
                     </div>
                     <div class="container-fields">
                         <h4>Tipo de produto:</h4>
                         <label for="type" id="" class="form-label "></label>
-                        <input value= "<%- product.type%>" type="text" name="type" id="" placeholder="Digite o tipo de produto " class="form-control " required>
+                        <select class="form-control" name="type">
+                            <option selected><%- product.type%></option>
+                            <option>Digital</option>
+                            <option>Físico</option>
+                          </select>
+                        
                     </div>
                     <div class="container-fields ">
                         <h4>Categoria do Produto:</h4>
-                        <label for="category " id="" class="form-label "></label>
-                        <input value= "<%-product.category%>"type="text " name="category " id="" placeholder="Digite aqui a categoria do produto " class="form-control " required>
+                        <label for="category" id="" class="form-label "></label>
+                        <select class="form-control" name="category">
+                            <option selected ><%- product.category%></option>
+                            <option>Alimentos e Bebidas</option>
+                            <option>Automotivo</option>
+                            <option>Celulares e Comunicação</option>
+                            <option>Computadores e Informática</option>
+                            <option>Cozinha</option>
+                            <option>Eletrônicos, TV e Áudio</option>
+                            <option>Esportes, Aventura e Lazer</option>
+                            <option>Ferramentas e Construção</option>
+                            <option>Filmes, Séries e Música</option>
+                            <option>Games e Consoles</option>
+                            <option>Livros</option>
+                            <option>Papelaria e Escritório</option>
+                            <option>Pet Shop</option>
+                            <option>Roupas, Calçados e Acessórios</option>
+                          </select>
                     </div>
                     <div>
                 </section>
                 <section>
                     <div class="container-radio-buttons ">
                         <h4 class="container-fields">Aceito em troca:</h4>
-                        <input type="radio" id="cash||service " name="anuncio " value="Dinheiro ou Permuta " class="form-check-label " required>
+                        <input type="radio" id="cash||service " name="payment" value="Dinheiro ou Permuta " class="form-check-label " required>
                         <label for="cash||service ">Dinheiro, produto ou serviço - tanto faz!</label><br>
-                        <input type="radio" id="cashonly" name="anuncio " value="Apenas Dinheiro " class="form-check-label ">
+                        <input type="radio" id="cashonly" name="payment" value="Apenas Dinheiro " class="form-check-label ">
                         <label for="cashonly">Somente dinheiro</label><br>
                     </div>
                     <div class="container-fields">
+
                         <h4>Preço:</h4>
                         <label for="price" id=""></label>
-                        <input value= "<%- product.price%>"type="text" name="price" id="" placeholder="Digite aqui o preço do produto " class="form-control ">
-                    </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">R$</span>
+                            </div>
+                            <input type="number" class="form-control" name="price" id="" value="<%- product.price%>" placeholder="Digite aqui o preço do produto" min="0" step=".01" required>
+                        </div>
                     <br>
                 </section>
                 <section>
@@ -92,6 +118,7 @@
             </form>
         </main>
         <%- include('../public/partials/footer') %>
+            <script src="/javascript/productsCreate.js"></script>
             <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css " integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T " crossorigin="anonymous ">
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>

@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>pagina de produtos</title>
+    <title><%=product.name %></title>
     <link rel="stylesheet" href="/stylesheets/products.css" />
     <link rel="stylesheet" href="/stylesheets/detalhes.css" />
 </head>
@@ -12,39 +12,34 @@
     <%- include('../public/partials/header') %>
 
         <main class="container">
-            <h1 class="title">Detalhes do produto</h1>
+            <h1 class="title">Detalhes</h1>
 
 
-            <div>
-                <label>ID Produto:</label>
-                <%=product.id %>
-                    <br>
-                    <label>Nome:</label>
-                    <%=product.nameProduct %>
-                        <br>
-                        <label>Detalhes:</label>
-                        <%=product.descriptionProduct %>
-                            <br>
-                            <label>Unidade:</label>
-                            <%=product.un %>
-                                <br>
-                                <label>Preço do Produto:</label>
-                                <%=product.price %>
-                                    <br>
-                                    <label>Status:</label>
-                                    <%=product.status %>
-                                        <br>
-                                        <label>Tipo do Produto:</label>
-                                        <%=product.type%>
-                                            <br>
-                                            <label>Categoria do produto:</label>
-                                            <%=product.category%>
-                                                <br>
-                                                <label>Forma de pagamento:</label>
-                                                <%=product.anuncio%>
+            <div class="details">
+                       <label>ID Produto:</label>
+                       <%=product.product_id %>
+                   <br>
+                       <label>Nome:</label>
+                       <%=product.name %>
+                   <br>
+                       <label>Detalhes:</label>
+                       <%=product.description %>
+                   <br>
+                       <label>Tipo do Produto:</label>
+                       <%=product.type%>
+                   <br>
+                       <label>Categoria do produto:</label>
+                       <%=product.category%>
+                   <br>             
+                       <label>Forma de pagamento:</label>
+                       <%=product.payment%>
+                   <br>
+                       <label>Preço do Produto:</label>
+                       R$ <%=product.price %>
+                   <br>                                     
             </div>
-<form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE">
-<input type="text" hidden name="id" value="<%-product.id%>"/>
+<form method="POST" action="/products/delete/<%= product.product_id %>?_method=DELETE">
+<input type="text" hidden name="id" value="<%-product.product_id%>"/>
 <button type="submit" class="btn btn-danger">Deletar</button>
 </form>
         </main>
