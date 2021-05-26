@@ -44,6 +44,3 @@ CREATE TABLE users(
    password VARCHAR(100) NOT NULL 
 )
 
--- inserindo um usuário de teste: 
-
-insert into users (name, email, password) VALUES ('administrador', 'admin@escambo.com', 'admin123')

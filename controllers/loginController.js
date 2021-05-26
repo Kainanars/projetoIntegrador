@@ -1,4 +1,5 @@
 const loginModel = require('../models/login')
+const bcrypt = require('bcrypt')
 
 function get(req, res){
     const emptyField = req.query.emptyField
@@ -9,7 +10,8 @@ async function post(req, res) {
    const user = await loginModel.getUser(req.body)
 
     const {email, password} = req.body
-     if (user === undefined || password !== user.password) {
+    const comparePassword = bcrypt.compareSync(password, user.password);
+     if (user === undefined || !comparePassword) {
         return res.render('login', {error: true, emptyField: false})
     } 
     req.session.user = user; 
