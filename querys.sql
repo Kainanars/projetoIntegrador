@@ -33,4 +33,17 @@ Conteúdo da embalagem
 1x Cabo USB
 
 Garantia 90 dias
-Venda condicionada a existência de produto em estoque', '5','Físico', 'Games e Consoles', 'Apenas Dinheiro', '9.044,93'  )
+Venda condicionada a existência de produto em estoque', '5','Físico', 'Games e Consoles', 'Apenas Dinheiro', '9044.93'  )
+
+-- Tabela de usuários: 
+
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (200) NOT NULL,  
+   email VARCHAR(100) NOT NULL, 
+   password VARCHAR(100) NOT NULL 
+)
+
+-- inserindo um usuário de teste: 
+
+insert into users (name, email, password) VALUES ('administrador', 'admin@escambo.com', 'admin123')
