@@ -1,6 +1,7 @@
 .title {
     color: gray;
     margin-top: 50px;
+    padding-bottom: 20px;
 }
 
 div {
@@ -19,4 +20,7 @@ footer {
     width: 100%;
         
         
+}
+.details label {
+    font-weight:bold;
 }
