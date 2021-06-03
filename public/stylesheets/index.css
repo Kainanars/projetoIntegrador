@@ -14,3 +14,24 @@ footer {
         
         
 }
+ .container {
+text-align: left;
+font-family: var(--thm-font);
+color: #737789;
+font-size: 18px;
+line-height: 36px;
+font-weight: 500;
+ }
+
+ .Bem-Vindo {
+
+    font-size: 64px;
+    line-height: 63px;
+    margin: 40px 0 32px;
+    color: var(--thm-black);
+    font-weight: 700;
+    text-align: left;
+ }
+
+
+ 

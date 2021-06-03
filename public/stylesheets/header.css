@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: grey;
+
+}
+
+.logo {
+width: 230px;
+vertical-align: middle;
+
+
+
+}
+
+header {
+
+box-shadow: -1px -9px 20px 2px black;
+}
+
