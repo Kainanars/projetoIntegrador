@@ -13,5 +13,13 @@ router.get('/' , controller.get);
 
 router.post('/', middleware.authenticateEmptyFields, controller.post); 
 
+// Para fazer logout: 
+router.get('/logout',(req,res)=>{
+    req.session.destroy(function (err) {
+      res.redirect('/'); 
+     });
+  })
+
+
 
 module.exports = router
