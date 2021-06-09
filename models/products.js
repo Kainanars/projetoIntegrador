@@ -44,8 +44,7 @@ async function getProductById(product_id) {
   });
   return result[0];
 }
- async function insertProduct(product) {
-   console.log(product)
+async function insertProduct(product, image) {
   await db.query("insert into products (name, description, und , type, category, payment, price, photo_product) values (:nameProduct, :descriptionProduct, :und, :type, :category, :payment, :price, :photoProduct)", {
     replacements: {
       nameProduct: product.nameProduct,
@@ -55,7 +54,7 @@ async function getProductById(product_id) {
       category: product.category,
       price: product.price,
       payment: product.payment,
-      photoProduct: product.photoProduct,
+      photoProduct: image,
       id: product.id
     }
 
@@ -63,7 +62,7 @@ async function getProductById(product_id) {
   }
 
 
- async function updateProduct(product) {
+ async function updateProduct(product, image) {
    await db.query("update products set name = :nameProduct, description = :descriptionProduct, und = :und, type = :type, category = :category, payment = :payment, price = :price, photo_product = :photoProduct  where product_id = :id", {
      replacements: {
        nameProduct: product.nameProduct,
@@ -73,7 +72,7 @@ async function getProductById(product_id) {
        category: product.category,
        price: product.price,
        payment: product.payment,
-       photoProduct: product.photoProduct,
+       photoProduct: image,
        id: product.id
      }
 

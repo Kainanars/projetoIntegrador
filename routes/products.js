@@ -1,10 +1,22 @@
 const express = require('express');
 const controller = require('../controllers/products');
 const router = express.Router();
-const middlewares = require('../middlewares/products');
 const modelProducts = require('../models/products');
 const auth = require('../middlewares/auth'); // Esse é o middleware para authenticar se o usuário está logado. 
+var multer = require('multer');
+var path = require('path');
+const fs = require('fs')
 
+    
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, "public/images/uploads");
+    },
+    filename: function(req, file, cb){
+        cb(null, 'uploads' + Date.now() + path.extname(file.originalname));
+    }
+})
+var upload = multer({storage});
 // Criando o produto
 
 router.get('/create', auth.auth, function(req, res) {
@@ -12,9 +24,12 @@ router.get('/create', auth.auth, function(req, res) {
 });
 
 //router.post("/", middlewares.validateBody, controller.newProduct);
-router.post("/",  async function (req, res) {
+router.post("/", upload.single('photoProduct'),  async function (req, res, file) {
+  //  const base64 = fs.readFileSync(req.file.path, "base64")
+    const image = req.file.filename
+    console.log('-------------------------->>>>>>>>>>>>>>>>>>>>>>>> ' + req.file)
     const product = req.body;
-    await modelProducts.insertProduct(product);
+    await modelProducts.insertProduct(product, image);
     res.redirect("/products");
   });
 
@@ -49,13 +64,13 @@ router.delete('/delete/:id' , async function(req, res){
     res.redirect("/products");
 });
 
-router.put("/", async function (req, res) {
+router.put("/", upload.single('photoProduct'), async function (req, res) {
+    const image = req.file.filename;
     var product = req.body;
     console.log(product)
-    await modelProducts.updateProduct(product);
+    await modelProducts.updateProduct(product, image);
     res.redirect("/products");
-  });
-
+  }); 
 
   
 
