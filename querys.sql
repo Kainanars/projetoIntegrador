@@ -44,3 +44,10 @@ CREATE TABLE users(
    password VARCHAR(100) NOT NULL 
 )
 
+-- PARA ACRESCENTAR novas colunas na tabela de usuários: 
+ALTER TABLE users 
+ADD COLUMN phone VARCHAR (255),
+ADD COLUMN gender CHAR (1),
+ADD COLUMN birth_date DATE,
+ADD COLUMN address VARCHAR (255); 
+
