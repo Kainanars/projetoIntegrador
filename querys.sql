@@ -51,3 +51,12 @@ ADD COLUMN gender CHAR (1),
 ADD COLUMN birth_date DATE,
 ADD COLUMN address VARCHAR (255); 
 
+-- Criar tabela intermediária usuários produtos
+CREATE TABLE products_users(
+    user_id INT, 
+    product_id INT
+);
+
+ALTER TABLE products_users ADD CONSTRAINT products_fk FOREIGN KEY (product_id) REFERENCES products(product_id); 
+ALTER TABLE products_users ADD CONSTRAINT user_fk FOREIGN KEY (user_id) REFERENCES users(id); 
+

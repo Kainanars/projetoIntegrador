@@ -16,7 +16,7 @@ async function post(req, res) {
     } 
     req.session.user = user; 
 
-     res.redirect('/')
+     res.redirect('/products')
 }
 
 module.exports = {

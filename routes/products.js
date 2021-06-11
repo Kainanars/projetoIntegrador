@@ -38,7 +38,7 @@ router.post("/", upload.single('photoProduct'),  async function (req, res, file)
 router.get('/', auth.auth, async (req, res, next) => {
     const products = await modelProducts.getProducts();
 res.render('productsList', { products: products });
-
+});
     
 
     // Rota de detalhes de produtos
@@ -55,7 +55,7 @@ router.get('/edit/:id', async  function(req, res){
     var product = await modelProducts.getProductById(productId);
     res.render('productEdit', {product: product})
 })
-});
+
 
 router.delete('/delete/:id' , async function(req, res){
     const product = req.body;
@@ -71,6 +71,12 @@ router.put("/", upload.single('photoProduct'), async function (req, res) {
     await modelProducts.updateProduct(product, image);
     res.redirect("/products");
   }); 
+
+  //Listando meus produtos: 
+  router.get('/me', auth.auth, async (req, res, next) => {
+    const products = await modelProducts.getProducts();
+res.render('myProducts', { products: products });
+  });
 
   
 
