@@ -14,30 +14,25 @@
         <section>
             <h1 class="title">Lista de produtos</h1>
         </section>
-
+        <div class="form-group input-group">
+           	<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+           	<input name="consulta" id="txt_consulta" placeholder="Pesquisar.." type="text" class="form-control">
+            </div>
         <section class="grid">
             <% products.forEach(function(product) { %>
 
-                <div class="each-child">
                     <div class=" card ">
-                        <img src="/images/uploads/<%= product.photo_product%>"  class="card-img-top " alt="... ">
-                        <div class="card-body">
-                            
-                            
-                            <h5 class="card-title "><strong><%=product.name.substr(0,30) %></strong></h5>
-                            <h6 class="card-title "><%=product.description.substr(0,50) %>...</h6>
-
-                            
-                            <a href="/products/<%= product.product_id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i>  Detalhes</a>
-                            
-                            
-                            
-                          
-
+                        <div class="card-image">
+                            <img src="/images/uploads/<%= product.photo_product%>" for="details" class="image-to-card" alt="... ">
+                        </div>
+                        <div class="card-body">  
+                            <h5 class="card-title" for="details"><strong><%=product.name.substr(0,30) %>...</strong></h5>
+                            <h6 class="card-title"><%=product.description.substr(0,50) %>...</h6>
+                            <a href="/products/<%= product.product_id%>" class="btn btn-custom text-center  botao" id="details">Detalhes</a>
+                        </div>
                         </div>
                     </div>
-                </div>
-
+                    
                 <%})%>
         </section>
     </main>

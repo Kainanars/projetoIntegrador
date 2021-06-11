@@ -22,53 +22,57 @@ h2 {
     flex-direction: wrap;
 }
 
-.each-child {
-    display: flex;
-    background-color: gray;
-    flex-direction: column;
-    padding-right: 60px;
-    color: #EEEDE7;
-    text-align: center;
-    width: 286px;
-    height: 206px;
-    
-}
-
-.each-child:not(:first-of-type) {
-    margin-left: 40px;
-}
 
 
-img.card-img-top {
-    width: 286px;
-    height: 206px;
-    margin: auto;
+
+.card-image{
+    width: 100%;
+    height: 100%;
+    padding: 5%;
     top: 0; left: 0; bottom: 0; right: 0;
-    
+}
+
+.image-to-card {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .card-body {
-    background-color: gray;
-    color: white;
-    width: 286px;
-    height: 206px;
-    
+    color: black;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 div.card {
     height: 412px;
+    width: 290px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
     width: 286px;
+    height: 412px;
+}
+
+div.card:not(:first-of-type) {
+    margin-left: 40px;
 }
 a.btn-custom:hover {
-    background-color: cyan;
-    color: black;
-    
+    background-image: linear-gradient(to bottom right, rgb(8, 162, 233), rgb(175, 175, 236));
+    color: white;
 }
 
 a.btn-custom {
-    background-color: cyan;
-    color: gray;
+    background-color: rgb(17, 119, 251);
+    color: white;
     font-weight: bolder;
     justify-content: center;
+}
+
+.botao {
+    width: 90%;
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -78,57 +82,7 @@ a.btn-custom {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
-        
-        
 }
-
-
-/*
-
-body {
-    text-align: center;
-}
-
-.container {
-    width: 669px;
-    margin: 20px auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.card {
-    flex: 0 0 200px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-    max-width: 100%;
-}
-
-.card .text {
-    padding: 0 20px 20px;
-}
-
-.card .text>button {
-    background: gray;
-    border: 0;
-    color: white;
-    padding: 10px;
-    width: 100%;
-}
-*/

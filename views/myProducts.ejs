@@ -18,24 +18,18 @@
         <section class="grid">
             <% products.forEach(function(product) { %>
 
-                <div class="each-child">
-                    <div class=" card ">
-                        <img src="/images/uploads/<%= product.photo_product%>"  class="card-img-top " alt="... ">
-                        <div class="card-body">
-                            
-                            
-                            <h5 class="card-title "><strong><%=product.name.substr(0,30) %></strong></h5>
-                            <h6 class="card-title "><%=product.description.substr(0,50) %>...</h6>
-
-
-                            <a href="/products/my/products/<%= product.product_id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
-                            <a href="/products/edit/<%= product.product_id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
-                          
-
-                        </div>
+                <div class=" card ">
+                    <div class="card-image">
+                        <img src="/images/uploads/<%= product.photo_product%>"  class="image-to-card" alt="... ">
+                    </div>
+                    <div class="card-body">  
+                        <h5 class="card-title "><strong><%=product.name.substr(0,30) %>...</strong></h5>
+                        <h6 class="card-title "><%=product.description.substr(0,50) %>...</h6>
+                        <a href="/products/my/products/<%= product.product_id%>" class="btn btn-custom text-center"><i class="fas fa-info"></i></a>
+                        <a href="/products/edit/<%= product.product_id%>" class="btn btn-custom text-center "><i class="fas fa-pencil-alt"></i></a>
+                    </div>
                     </div>
                 </div>
-
                 <%})%>
         </section>
     </main>
