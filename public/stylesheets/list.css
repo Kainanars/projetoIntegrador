@@ -49,6 +49,7 @@ img.card-img-top {
 
 .card-body {
     background-color: gray;
+    color: white;
     width: 286px;
     height: 206px;
     

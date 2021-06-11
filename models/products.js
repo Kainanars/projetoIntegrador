@@ -44,8 +44,9 @@ async function getProductById(product_id) {
   });
   return result[0];
 }
-async function insertProduct(product, image) {
-  await db.query("insert into products (name, description, und , type, category, payment, price, photo_product) values (:nameProduct, :descriptionProduct, :und, :type, :category, :payment, :price, :photoProduct)", {
+async function insertProduct(product, image, userId) {
+  const newProduct = await db.query("insert into products (name, description, und , type, category, payment, price, photo_product) values (:nameProduct, :descriptionProduct, :und, :type, :category, :payment, :price, :photoProduct)", {
+    type: Sequelize.QueryTypes.INSERT,
     replacements: {
       nameProduct: product.nameProduct,
       descriptionProduct: product.descriptionProduct,
@@ -57,8 +58,14 @@ async function insertProduct(product, image) {
       photoProduct: image,
       id: product.id
     }
-
-  })
+  });
+   await db.query("insert into products_users (user_id, product_id) values (:userId, :productId)",{
+   replacements: {
+     userId: userId,
+     productId: newProduct[0]
+   } 
+  }
+   )
   }
 
 

@@ -12,15 +12,15 @@
     <%- include('../public/partials/header') %>
 
         <main class="container">
-            <h1 class="title">Detalhes</h1>
 
+            <div class="photoProduct">
+                <img src="/images/uploads/<%= product.photo_product%>"  class="card-img-top"  alt="... ">
+
+            </div>
 
             <div class="details">
-                       <label>ID Produto:</label>
-                       <%=product.product_id %>
                    <br>
-                       <label>Nome:</label>
-                       <%=product.name %>
+                   <h1 class="title"><%=product.name %></h1>
                    <br>
                        <label>Detalhes:</label>
                        <%=product.description %>
@@ -36,12 +36,12 @@
                    <br>
                        <label>Preço do Produto:</label>
                        R$ <%=product.price %>
-                   <br>                                     
+                   <br>                     
+                <form method="POST" action="/products/delete/<%= product.product_id %>?_method=DELETE">
+                <input type="text" hidden name="id" value="<%-product.product_id%>"/>
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>                
             </div>
-<form method="POST" action="/products/delete/<%= product.product_id %>?_method=DELETE">
-<input type="text" hidden name="id" value="<%-product.product_id%>"/>
-<button type="submit" class="btn btn-danger">Deletar</button>
-</form>
         </main>
         <%- include('../public/partials/footer') %>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

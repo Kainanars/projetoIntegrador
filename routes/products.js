@@ -26,10 +26,11 @@ router.get('/create', auth.auth, function(req, res) {
 //router.post("/", middlewares.validateBody, controller.newProduct);
 router.post("/", upload.single('photoProduct'),  async function (req, res, file) {
   //  const base64 = fs.readFileSync(req.file.path, "base64")
+    console.log(`meu id de usuario ${req.session.user.id} `)
     const image = req.file.filename
     console.log('-------------------------->>>>>>>>>>>>>>>>>>>>>>>> ' + req.file)
     const product = req.body;
-    await modelProducts.insertProduct(product, image);
+    await modelProducts.insertProduct(product, image, req.session.user.id);
     res.redirect("/products");
   });
 

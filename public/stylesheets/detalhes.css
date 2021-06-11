@@ -1,11 +1,23 @@
 .title {
-    color: gray;
+    color: black;
     margin-top: 50px;
     padding-bottom: 20px;
 }
 
 div {
     color: gray;
+}
+
+.container {
+    column-count: 2;
+    column-width: 50vh;
+    column-gap: 50px;
+    display:flexbox;
+}
+
+.photoProduct{
+    align-content:center;
+    column-width: auto;
 }
 
 button.btn-custom {

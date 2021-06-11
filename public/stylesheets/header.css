@@ -1,10 +1,14 @@
-* {
+header {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
     color: grey;
 
+}
+
+#navbarSupportedContent{
+    margin-left: auto;
 }
 
 .logo {
