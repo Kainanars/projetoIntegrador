@@ -3,35 +3,20 @@ const config = require("../config/database");
 const db = new Sequelize(config);
 
 
-//let products = [
-//  {
-//    id:1,
-//    nameProduct: "Televisão",
-//    descriptionProduct: "O design sofisticado da Smart TV Samsung Crystal UHD 58TU7020 com exclusiva tela sem bordas aparentes proporciona elegância ao seu ambiente",
-//    category: "Televisão",
-//    price: 99999,
-//    anuncio: "Apenas dinheiro"
-//
-//  },
-//  { 
-//    id:2,
-//    nameProduct: "Computador",
-//    descriptionProduct: "Core i5",
-//    category: "Computador",
-//    price: 88888,
-//    anuncio: "Apenas dinheiro"
-//  }
-//];
-  
-
-
- // function getProducts() {
- //   return products;
- // }
-//
 async function getProducts() {
   let searchQuery = "select * from products;";
   const result = await db.query(searchQuery, { type: Sequelize.QueryTypes.SELECT});
+return result;
+}
+
+async function getMyProducts(userId) {
+  let searchQuery = "select * from products pc inner join products_users PU on (pc.product_id=pu.product_id) where pu.user_id =:userId";
+  const result = await db.query(searchQuery, { 
+    type: Sequelize.QueryTypes.SELECT,
+    replacements: {
+        userId: userId,
+      } 
+  });
 return result;
 }
   
@@ -44,6 +29,27 @@ async function getProductById(product_id) {
   });
   return result[0];
 }
+
+async function ownerProduct(product_id) {
+  const ownerId = await db.query("select user_id from products_users where product_id = :productId;", {
+      type: Sequelize.QueryTypes.SELECT,
+      replacements: {
+        productId: product_id
+      }
+ });
+ return ownerId[0]
+}
+
+async function phoneOwner(userId){
+  const phone = await db.query("SELECT phone FROM users WHERE id = :userId;", {
+    type: Sequelize.QueryTypes.SELECT,
+    replacements: {
+      userId: userId
+    }
+});
+ return phone;
+}
+
 async function insertProduct(product, image, userId) {
   const newProduct = await db.query("insert into products (name, description, und , type, category, payment, price, photo_product) values (:nameProduct, :descriptionProduct, :und, :type, :category, :payment, :price, :photoProduct)", {
     type: Sequelize.QueryTypes.INSERT,
@@ -99,6 +105,9 @@ async function removeProducts(productId) {
     insertProduct: insertProduct,
     updateProduct: updateProduct,
     removeProducts: removeProducts,
-    getProductById: getProductById
+    getProductById: getProductById,
+    getMyProducts: getMyProducts,
+    ownerProduct: ownerProduct,
+    phoneOwner: phoneOwner
+ 
   };
-  

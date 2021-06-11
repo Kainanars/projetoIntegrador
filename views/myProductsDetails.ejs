@@ -20,6 +20,9 @@
                 <div class="details">
                            <h1 class="title"><%=product.name %></h1>
                        <br>
+                           <label>ID do Produto:</label>
+                           <%=product.product_id %>
+                       <br>
                            <label>Detalhes:</label>
                            <%=product.description %>
                        <br>
@@ -34,11 +37,15 @@
                        <br>
                            <label>Preço do Produto:</label>
                            R$ <%=product.price %>
-                       <br>                     
-                    <form method="POST" action="/products/delete/<%= product.product_id %>?_method=DELETE">
-                    <input type="text" hidden name="id" value="<%-product.product_id%>"/>
-                    <a href="<%=contact%>" class="whats"><img src="/images/WhatsApp.png" class="btn btn-custom text-center  WhatsApp">Entrar em contato</a>
-                    </form>                
+                       <br>       
+                    <div class="buttons">
+                        <form method="POST" action="/products/delete/<%= product.product_id %>?_method=DELETE">
+                            <input type="text" hidden name="id" value="<%-product.product_id%>"/>
+                            <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>               
+                            <a href="/products/edit/<%= product.product_id%>"><button class="btn btn-warning">Editar</button></a>
+                    </div>              
+
                 </div>
             </section>
             

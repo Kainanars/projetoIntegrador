@@ -5,7 +5,8 @@ const modelProducts = require('../models/products');
 const auth = require('../middlewares/auth'); // Esse é o middleware para authenticar se o usuário está logado. 
 var multer = require('multer');
 var path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+const { ownerProduct } = require('../models/products');
 
     
 const storage = multer.diskStorage({
@@ -26,11 +27,10 @@ router.get('/create', auth.auth, function(req, res) {
 //router.post("/", middlewares.validateBody, controller.newProduct);
 router.post("/", upload.single('photoProduct'),  async function (req, res, file) {
   //  const base64 = fs.readFileSync(req.file.path, "base64")
-    console.log(`meu id de usuario ${req.session.user.id} `)
-    const image = req.file.filename
-    console.log('-------------------------->>>>>>>>>>>>>>>>>>>>>>>> ' + req.file)
+    const userId = req.session.user.id;
+    const image = req.file.filename;
     const product = req.body;
-    await modelProducts.insertProduct(product, image, req.session.user.id);
+    await modelProducts.insertProduct(product, image, userId);
     res.redirect("/products");
   });
 
@@ -47,7 +47,11 @@ res.render('productsList', { products: products });
 router.get('/:id', async function(req, res) {
         var productId = req.params.id;
         var product = await modelProducts.getProductById(productId);
-        res.render('productsDetails', { product: product });
+        var ownerId = await modelProducts.ownerProduct(productId);
+        var contact = await modelProducts.phoneOwner(ownerId.user_id);
+        contact =  `https://api.whatsapp.com/send?phone=55${contact[0].phone}`
+
+        res.render('productsDetails', { product: product, contact: contact });
 });
 
 
@@ -74,11 +78,16 @@ router.put("/", upload.single('photoProduct'), async function (req, res) {
   }); 
 
   //Listando meus produtos: 
-  router.get('/me', auth.auth, async (req, res, next) => {
-    const products = await modelProducts.getProducts();
+  router.get('/my/products', auth.auth, async (req, res, next) => {
+    const products = await modelProducts.getMyProducts(req.session.user.id);
 res.render('myProducts', { products: products });
   });
 
+  router.get('/my/products/:id', async function(req, res) {
+    var productId = req.params.id;
+    var product = await modelProducts.getProductById(productId);
+    res.render('myProductsDetails', { product: product });
+});
   
 
 

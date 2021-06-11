@@ -10,14 +10,26 @@ div {
 
 .container {
     column-count: 2;
-    column-width: 50vh;
+    column-width: 100%;
     column-gap: 50px;
-    display:flexbox;
+    display:inline-flexbox;
+    height: 100%; 
+    width: 100%
 }
 
 .photoProduct{
     align-content:center;
-    column-width: auto;
+    column-width: 50%;
+    height: 500px;
+}
+
+.details{
+    align-content:center;
+    column-width: 50%;
+}
+
+.details label{
+    font-weight: bold;
 }
 
 button.btn-custom {
@@ -33,6 +45,17 @@ footer {
         
         
 }
-.details label {
-    font-weight:bold;
+
+
+.WhatsApp{
+    height: 50px;
+    vertical-align: middle;
+}
+
+.buttons{
+    display: flex;
+}
+
+.buttons button{
+    margin: 10px;
 }
