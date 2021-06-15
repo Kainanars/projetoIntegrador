@@ -64,7 +64,7 @@ router.get('/edit/:id', async  function(req, res){
 
 router.delete('/delete/:id' , async function(req, res){
     const product = req.body;
-
+    console.log(product)
     await modelProducts.removeProducts(product.id);
     res.redirect("/products");
 });

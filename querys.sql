@@ -59,4 +59,3 @@ CREATE TABLE products_users(
 
 ALTER TABLE products_users ADD CONSTRAINT products_fk FOREIGN KEY (product_id) REFERENCES products(product_id); 
 ALTER TABLE products_users ADD CONSTRAINT user_fk FOREIGN KEY (user_id) REFERENCES users(id); 
-

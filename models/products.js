@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 const config = require("../config/database");
 const db = new Sequelize(config);
+const fs = require('file-system')
 
 
 async function getProducts() {
@@ -97,7 +98,10 @@ async function removeProducts(productId) {
     replacements: {
       id: productId
     }
-  })
+  });
+  //fs.rmdirSync()
+  //cadastrar função FS paremoer arquivo de imagem do sitema
+
 }
   
   module.exports = {
