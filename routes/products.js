@@ -89,6 +89,10 @@ res.render('myProducts', { products: products });
     res.render('myProductsDetails', { product: product });
 });
   
-
+router.post('/search/name', async (req, res, next) => {
+    const productName = req.body.consulta; 
+    const products = await modelProducts.getProductByName(productName);
+res.render('productsList', { products: products });
+});
 
 module.exports = router;

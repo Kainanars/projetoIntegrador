@@ -19,7 +19,7 @@ h2 {
     margin: 5%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-bottom: 100px;
 }
 
@@ -34,8 +34,9 @@ h2 {
 }
 
 .image-to-card {
-    max-height: 200px;
-    max-width: 200px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
 }
 
 .card-body {
@@ -54,10 +55,11 @@ div.card {
     text-align: center;
     width: 286px;
     height: 412px;
-}
-
-div.card:not(:first-of-type) {
     margin-left: 40px;
+
+}
+div.card:nth-child(n+4) {
+    margin-top: 40px;
 }
 a.btn-custom:hover {
     background-image: linear-gradient(to bottom right, rgb(8, 162, 233), rgb(175, 175, 236));

@@ -104,6 +104,18 @@ async function removeProducts(productId) {
 
 }
   
+async function getProductByName(name) {
+  const productName = `%${name}%`;
+  const result = await db.query("select * from products where UPPER(name) LIKE UPPER(:name);", {
+    type: Sequelize.QueryTypes.SELECT,
+    replacements: {
+      name: productName
+    }
+  });
+
+    return result;
+}
+
   module.exports = {
     getProducts: getProducts,
     insertProduct: insertProduct,
@@ -112,6 +124,7 @@ async function removeProducts(productId) {
     getProductById: getProductById,
     getMyProducts: getMyProducts,
     ownerProduct: ownerProduct,
-    phoneOwner: phoneOwner
+    phoneOwner: phoneOwner,
+    getProductByName: getProductByName
  
   };

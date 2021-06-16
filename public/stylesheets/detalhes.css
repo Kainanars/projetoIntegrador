@@ -14,13 +14,15 @@ div {
     column-gap: 50px;
     display:inline-flexbox;
     height: 100%; 
-    width: 100%
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .photoProduct{
     align-content:center;
-    column-width: 50%;
-    height: 500px;
+    flex: 0 0 500px;
 }
 
 .details{
